@@ -2,7 +2,7 @@
 <html lang="en">
 	<head>
 		<meta charset="utf-8">
-		<title>D3: SVG bar chart with value labels (centered)</title>
+		<title>D3: SVG interactive bar chart </title>
 		<script type="text/javascript" src="../d3/d3.js"></script>
 		<style type="text/css">
 			/* No style rules here yet */		
@@ -12,8 +12,6 @@
 	<p>Click on this text to scale the height of the chart.</p>
 		<script type="text/javascript">
 
-
-			//Width and height
 			var w = 500;
 			var h = 250;
 			var pCount = 0;
@@ -70,7 +68,7 @@
 
 			   // third variable = scales with fill-opacity
 			   .attr("fill-opacity", function(d) {
-					return (d[2] * .75) / 100 + .25;
+					return 0.25 + (d[2] / 100) * 0.75 ;
 			   })
 
 			   .on("click", function() {
@@ -248,7 +246,6 @@
 					});
 
 				d3.select("div").selectAll("p").remove();
-				d3.select("div").append("p").html("This is being sorted by the " + order[sortOrder] + " variable.")
 			};
 
 		</script>
